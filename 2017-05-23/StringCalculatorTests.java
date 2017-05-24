@@ -36,4 +36,11 @@ public class StringCalculatorTests
 		Assert.assertEquals( 1, m_result );
 	}
 
+	@Test
+	public void Add_MultiDigitNumber_ReturnsSameNumber()
+	{
+		m_testStringOne = "9632";
+		m_result = m_stringCalculator.add( m_testStringOne );
+		Assert.assertEquals( 9632, m_result );
+	}
 }
