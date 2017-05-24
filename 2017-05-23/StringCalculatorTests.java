@@ -13,11 +13,27 @@ public class StringCalculatorTests
 	}
 
 	@Test
-	public void AddMethod_EmptyString_ReturnsZero()
+	public void Add_EmptyString_ReturnsZero()
 	{
 		m_testStringOne = "";
 		m_result = m_stringCalculator.add( m_testStringOne );
 		Assert.assertEquals( 0, m_result );
+	}
+
+	@Test
+	public void Add_ZeroString_ReturnsZero()
+	{
+		m_testStringOne = "";
+		m_result = m_stringCalculator.add( m_testStringOne );
+		Assert.assertEquals( 0, m_result );
+	}
+
+	@Test
+	public void Add_OneNumber_ReturnsSameNumber()
+	{
+		m_testStringOne = "1";
+		m_result = m_stringCalculator.add( m_testStringOne );
+		Assert.assertEquals( 1, m_result );
 	}
 
 }
