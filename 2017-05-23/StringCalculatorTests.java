@@ -23,7 +23,7 @@ public class StringCalculatorTests
 	@Test
 	public void Add_ZeroString_ReturnsZero()
 	{
-		m_testStringOne = "";
+		m_testStringOne = "0";
 		m_result = m_stringCalculator.add( m_testStringOne );
 		Assert.assertEquals( 0, m_result );
 	}
