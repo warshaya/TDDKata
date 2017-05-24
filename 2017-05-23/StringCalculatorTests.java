@@ -43,4 +43,18 @@ public class StringCalculatorTests
 		m_result = m_stringCalculator.add( m_testStringOne );
 		Assert.assertEquals( 9632, m_result );
 	}
+
+	@Test
+	public void Add_TwoNumbers_ReturnsSum()
+	{
+		m_testStringOne = "1,1";
+		m_result = m_stringCalculator.add ( m_testStringOne );
+		Assert.assertEquals( 2, m_result );
+	}
 }
+
+
+
+
+
+
