@@ -1,4 +1,4 @@
-import java.lang.reflect.*;
+import java.lang.reflect.Array;
 
 public class StringCalculator
 {
