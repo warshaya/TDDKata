@@ -34,4 +34,53 @@ public class StringCalculatorTests
 		m_result = m_stringCalculator.add( "49" );
 		Assert.assertEquals( 49, m_result );
 	}
+
+	@Test
+	public void Add_TwoNumbers_ReturnsTheSum()
+	{
+		m_result = m_stringCalculator.add( "1,1" );
+		Assert.assertEquals( 2, m_result );
+	}
+
+	@Test
+	public void Add_MultipleNumbers_ReturnsSum()
+	{
+		m_result = m_stringCalculator.add( "1,23,456" );
+		Assert.assertEquals( 480, m_result );
+	}
+
+	@Test
+	public void Add_MultipleNumbersNewLine_ReturnsSum()
+	{
+		m_result = m_stringCalculator.add( "1\n2\n3" );
+		Assert.assertEquals( 6, m_result );
+	}
+
+	@Test
+	public void Add_MultipleNumbersMixedCommasAndNewLines_ReturnsSum()
+	{
+		m_result = m_stringCalculator.add( "1,2\n3" );
+		Assert.assertEquals( 6, m_result );
+	}
+
+	@Test
+	public void Add_PeriodDelimiterEmtryString_ReturnsZero()
+	{
+		m_result = m_stringCalculator.add( "//.\n" );
+		Assert.assertEquals( 0, m_result );
+	}
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
