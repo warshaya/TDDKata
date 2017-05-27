@@ -90,6 +90,20 @@ public class StringCalculatorTests
 		m_result = m_stringCalculator.add( "//-\n4-7" );
 		Assert.assertEquals( 11, m_result );
 	}
+
+	@Test
+	public void Add_TabDelimiterTwoNumbers_ReturnsSum()
+	{
+		m_result = m_stringCalculator.add( "//\t\n1\t3" );
+		Assert.assertEquals( 4, m_result );
+	}
+
+	@Test
+	public void Add_SemicolonDelimiterThreeNumbers_ReturnsSum()
+	{
+		m_result = m_stringCalculator.add( "//;\n4;5;6" );
+		Assert.assertEquals( 15, m_result );
+	}
 }
 
 
