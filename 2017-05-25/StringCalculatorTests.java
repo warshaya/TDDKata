@@ -1,4 +1,5 @@
 import org.junit.*;
+import org.junit.rules.ExpectedException;
 
 public class StringCalculatorTests
 {
@@ -7,6 +8,9 @@ public class StringCalculatorTests
 
 	public StringCalculatorTests()
 	{}
+
+	@Rule
+	public ExpectedException thrown = ExpectedException.none();
 
 	@Before
 	public void initializeTest()
@@ -110,6 +114,12 @@ public class StringCalculatorTests
 	{
 		m_result = m_stringCalculator.add( "//opjadpoiwejf;.sdkm.kmcopjew...\n1opjadpoiwejf;.sdkm.kmcopjew...1opjadpoiwejf;.sdkm.kmcopjew..." );
 		Assert.assertEquals( 2, m_result );
+	}
+	
+	@Test( expected = IllegalArgumentException.class )
+	public void Add_NegativeNumber_ThrowsException()
+	{
+		m_result = m_stringCalculator.add( "-3" );
 	}
 }
 

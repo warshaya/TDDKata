@@ -1,5 +1,4 @@
 import java.lang.reflect.Array;
-import java.util.regex.Matcher;
 
 public class StringCalculator
 {
@@ -19,7 +18,7 @@ public class StringCalculator
 				inputString = inputString.replaceAll( "\\.", "," );
 				delimiters = delimiters.replaceAll( "\\.", "," );
 			}
-			inputString = inputString.replaceAll( Matcher.quoteReplacement( delimiters ) , "," );
+			inputString = inputString.replaceAll( delimiters, "," );
 		}
 		return addWellFormated( inputString ); //"WellFormated" means delimited by commas and/or newlines
 	}
