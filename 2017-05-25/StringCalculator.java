@@ -4,25 +4,34 @@ public class StringCalculator
 {
 	public int add( String inputString )
 	{
-		if ( inputString.charAt( 0 ) == '/' )
-		{
-		//todo: store everything up to "\n" as a string delimiter, then store everything else as string
-		inputString = inputString.split( "\n", 1 )[0];
-		}
-		inputString = inputString.replaceAll( "\\n", "," );
-		if ( inputString == "" )
+		if ( inputString.equals( "" ) )
 		{
 			return 0;
 		}
+		if ( inputString.charAt( 0 ) == '/' )
 		{
-			String[] inputArray = inputString.split( "," );
-			int sizeOfArray = Array.getLength( inputArray );
-			int sum = 0;
-			for ( int i=0; i < sizeOfArray; i++ )
-			{
-				sum += Integer.parseInt( inputArray[i] );
-			}
-			return sum;
+			inputString = inputString.replaceFirst( "//", "" );
+			String delimiters = inputString.split( "\n", 2 )[0];
+			inputString = inputString.split( "\n", 2 )[1];
+		// TODO: convert all delimiters to commas
 		}
+		return addWellFormated( inputString );
+	}
+
+	private int addWellFormated( String inputString )
+	{	
+		if ( inputString.equals( "" ) )
+		{
+			return 0;
+		} else
+		inputString = inputString.replaceAll( "\n", "," );
+		String[] inputArray = inputString.split( "," );
+		int sizeOfArray = Array.getLength( inputArray );
+		int sum = 0;
+		for ( int i=0; i < sizeOfArray; i++ )
+		{
+			sum += Integer.parseInt( inputArray[i] );
+		}
+		return sum;
 	}
 }

@@ -64,10 +64,24 @@ public class StringCalculatorTests
 	}
 
 	@Test
-	public void Add_PeriodDelimiterEmtryString_ReturnsZero()
+	public void Add_PeriodDelimiterSingleNumber_ReturnsNumber()
+	{
+		m_result = m_stringCalculator.add( "//.\n123" );
+		Assert.assertEquals( 123, m_result );
+	}
+
+	@Test
+	public void Add_PeriodDelimiterEmptyString_ReturnsZero()
 	{
 		m_result = m_stringCalculator.add( "//.\n" );
 		Assert.assertEquals( 0, m_result );
+	}
+
+	@Test
+	public void Add_PeriodDelimiterTwoNumbers_ReturnsSum()
+	{
+		m_result = m_stringCalculator.add( "//.\n3.5" );
+		Assert.assertEquals( 8, m_result );
 	}
 }
 
