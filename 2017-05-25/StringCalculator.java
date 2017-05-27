@@ -13,7 +13,9 @@ public class StringCalculator
 			inputString = inputString.replaceFirst( "//", "" );
 			String delimiters = inputString.split( "\n", 2 )[0];
 			inputString = inputString.split( "\n", 2 )[1];
-		// TODO: convert all delimiters to commas
+			System.out.println( "input String is ->" + inputString + "<-" );
+			inputString = inputString.replaceAll( "\\." , "," );
+			System.out.println( "input String is ->" + inputString + "<- after replacement" );
 		}
 		return addWellFormated( inputString );
 	}

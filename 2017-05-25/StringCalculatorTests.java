@@ -83,6 +83,13 @@ public class StringCalculatorTests
 		m_result = m_stringCalculator.add( "//.\n3.5" );
 		Assert.assertEquals( 8, m_result );
 	}
+
+	@Test
+	public void Add_HyphenDelimiterTwoNumbers_ReturnsSum()
+	{
+		m_result = m_stringCalculator.add( "//-\n4-7" );
+		Assert.assertEquals( 11, m_result );
+	}
 }
 
 
