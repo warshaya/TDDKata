@@ -9,7 +9,7 @@ public class StringCalculator
 		{
 			return 0;
 		}
-		if ( inputString.charAt( 0 ) == '/' )
+		if ( inputString.charAt( 0 ) == '/' ) //test for custom delimiter
 		{
 			inputString = inputString.replaceFirst( "//", "" );
 			String delimiters = inputString.split( "\n", 2 )[0];
@@ -21,7 +21,7 @@ public class StringCalculator
 			}
 			inputString = inputString.replaceAll( Matcher.quoteReplacement( delimiters ) , "," );
 		}
-		return addWellFormated( inputString );
+		return addWellFormated( inputString ); //"WellFormated" means delimited by commas and/or newlines
 	}
 
 	private int addWellFormated( String inputString )

@@ -104,6 +104,13 @@ public class StringCalculatorTests
 		m_result = m_stringCalculator.add( "//;\n4;5;6" );
 		Assert.assertEquals( 15, m_result );
 	}
+
+	@Test
+	public void Add_RandomTypingDelimiterTwoNumbers_ReturnsSum()
+	{
+		m_result = m_stringCalculator.add( "//opjadpoiwejf;.sdkm.kmcopjew...\n1opjadpoiwejf;.sdkm.kmcopjew...1opjadpoiwejf;.sdkm.kmcopjew..." );
+		Assert.assertEquals( 2, m_result );
+	}
 }
 
 
