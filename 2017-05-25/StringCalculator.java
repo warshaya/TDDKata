@@ -1,4 +1,5 @@
 import java.lang.reflect.Array;
+import java.util.regex.Matcher;
 
 public class StringCalculator
 {
@@ -13,9 +14,12 @@ public class StringCalculator
 			inputString = inputString.replaceFirst( "//", "" );
 			String delimiters = inputString.split( "\n", 2 )[0];
 			inputString = inputString.split( "\n", 2 )[1];
-			System.out.println( "input String is ->" + inputString + "<-" );
-			inputString = inputString.replaceAll( "\\." , "," );
-			System.out.println( "input String is ->" + inputString + "<- after replacement" );
+			if ( delimiters.contains( "." ) )
+			{
+				inputString = inputString.replaceAll( "\\.", "," );
+				delimiters = delimiters.replaceAll( "\\.", "," );
+			}
+			inputString = inputString.replaceAll( Matcher.quoteReplacement( delimiters ) , "," );
 		}
 		return addWellFormated( inputString );
 	}
