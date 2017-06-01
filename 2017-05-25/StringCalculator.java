@@ -8,7 +8,7 @@ public class StringCalculator
 		{
 			return 0;
 		}
-		if ( inputString.charAt( 0 ) == '/' ) //test for custom delimiter
+		if ( inputString.charAt( 0 ) == '/' ) //test for custom delimiter in file
 		{
 			inputString = inputString.replaceFirst( "//", "" );
 			String delimiters = inputString.split( "\n", 2 )[0];
@@ -20,7 +20,7 @@ public class StringCalculator
 			}
 			inputString = inputString.replaceAll( delimiters, "," );
 		}
-		return addWellFormated( inputString ); //"WellFormated" means delimited by commas and/or newlines
+			return addWellFormated( inputString ); //"WellFormated" means delimited by commas and/or newlines
 	}
 
 	private int addWellFormated( String inputString )
@@ -35,7 +35,12 @@ public class StringCalculator
 		int sum = 0;
 		for ( int i=0; i < sizeOfArray; i++ )
 		{
-			sum += Integer.parseInt( inputArray[i] );
+			int nextArg = Integer.parseInt( inputArray[i] );
+			if ( nextArg < 0 )
+			{
+				throw new IllegalArgumentException( "Exception: input cannot be negative." );
+			}
+			sum += nextArg;
 		}
 		return sum;
 	}

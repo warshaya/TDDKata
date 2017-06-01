@@ -9,9 +9,6 @@ public class StringCalculatorTests
 	public StringCalculatorTests()
 	{}
 
-	@Rule
-	public ExpectedException thrown = ExpectedException.none();
-
 	@Before
 	public void initializeTest()
 	{
