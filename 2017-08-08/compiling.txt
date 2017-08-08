@@ -1,0 +1,8 @@
+Compile main library dll
+   csc -target:library StringCalculator.cs
+
+Compile test dll
+   csc -target:library -reference:"/C/Program Files (x86)/Microsoft Visual Studio 14.0/Common7/IDE/PublicAssemblies/Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll" -reference:StringCalculator.dll StringCalculatorTests.cs
+
+Execute tests
+   mstest -testcontainer:StringCalculatorTests.dll
