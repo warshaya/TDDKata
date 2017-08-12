@@ -1,7 +1,7 @@
 public class StringCalculator
 {
-   public void Add()
+   public int Add( string input )
    {
-      System.Console.WriteLine( "Hello StringCalculator World!" );
+      return 0;
    }
 }
