@@ -18,4 +18,12 @@ public class StringCalculatorTests
       int result = calc.Add( "1" );
       Assert.AreEqual( 1, result );
    }
+
+   [TestMethod]
+   public void Add_DifferentSingleNumber_ReturnsThatNumberInstead()
+   {
+      StringCalculator calc = new StringCalculator();
+      int result = calc.Add( "2" );
+      Assert.AreEqual( 2, result );
+   }
 }
