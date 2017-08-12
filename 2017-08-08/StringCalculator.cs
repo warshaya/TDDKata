@@ -2,6 +2,13 @@ public class StringCalculator
 {
    public int Add( string input )
    {
-      return 0;
+      if ( input == "" )
+      {
+         return 0;
+      }
+      else
+      {
+         return 1;
+      }
    }
 }
