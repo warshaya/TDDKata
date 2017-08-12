@@ -8,7 +8,8 @@ public class StringCalculator
       }
       else
       {
-         return 1;
+         int result = System.Convert.ToInt32( input );
+         return result;
       }
    }
 }
