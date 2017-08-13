@@ -7,6 +7,7 @@ public class StringCalculator
          return 0;
       }
       int result = 0;
+      input = input.Replace( '\n', ',' );
       if ( input.Contains( "," ) )
       {
          string[] separatedInput = input.Split( ',' );

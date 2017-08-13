@@ -65,4 +65,12 @@ public class StringCalculatorTests
       int result = calc.Add( "1,0,1,0,0,1,0,1,1,1,0,0,0,0,1,1,1,1,1,1" );
       Assert.AreEqual( 12, result );
    }
+
+   [TestMethod]
+   public void Add_NewLine_ReturnsSum()
+   {
+      StringCalculator calc = new StringCalculator();
+      int result = calc.Add( "1\n2,3" );
+      Assert.AreEqual( 6, result );
+   }
 }
