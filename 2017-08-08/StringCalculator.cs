@@ -7,10 +7,10 @@ public class StringCalculator
          return 0;
       }
       int result = 0;
-      input = input.Replace( '\n', ',' );
-      if ( input.Contains( "," ) )
+      string convertedInput = input.Replace( '\n', ',' );
+      if ( convertedInput.Contains( "," ) )
       {
-         string[] separatedInput = input.Split( ',' );
+         string[] separatedInput = convertedInput.Split( ',' );
          for ( int i=0; i<separatedInput.Length; i++ )
          {
             result += System.Convert.ToInt32( separatedInput[i] );
@@ -19,7 +19,7 @@ public class StringCalculator
       }
       else
       {
-         return System.Convert.ToInt32( input );
+         return System.Convert.ToInt32( convertedInput );
       }
    }
 }
