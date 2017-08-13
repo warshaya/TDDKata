@@ -26,4 +26,27 @@ public class StringCalculatorTests
       int result = calc.Add( "2" );
       Assert.AreEqual( 2, result );
    }
+   [TestMethod]
+   public void Add_NegativeNumber_ReturnsSameNumber()
+   {
+      StringCalculator calc = new StringCalculator();
+      int result = calc.Add ( "-10" );
+      Assert.AreEqual( -10, result );
+   }
+
+   [TestMethod]
+   public void Add_TwoNumbers_ReturnsSum()
+   {
+      StringCalculator calc = new StringCalculator();
+      int result = calc.Add( "1,1" );
+      Assert.AreEqual( 2, result );
+   }
+
+   [TestMethod]
+   public void Add_TwoDifferentNumbers_ReturnsSum()
+   {
+      StringCalculator calc = new StringCalculator();
+      int result = calc.Add( "387,8" );
+      Assert.AreEqual( 395, result );
+   }
 }

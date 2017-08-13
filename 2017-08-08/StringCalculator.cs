@@ -6,10 +6,19 @@ public class StringCalculator
       {
          return 0;
       }
+      int result = 0;
+      if ( input.Contains( "," ) )
+      {
+         string[] separatedInput = input.Split( ',' );
+         for ( int i=0; i<separatedInput.Length; i++ )
+         {
+            result += System.Convert.ToInt32( separatedInput[i] );
+         }
+         return result;
+      }
       else
       {
-         int result = System.Convert.ToInt32( input );
-         return result;
+         return System.Convert.ToInt32( input );
       }
    }
 }
