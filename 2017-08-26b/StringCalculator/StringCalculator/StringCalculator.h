@@ -10,6 +10,9 @@
 
 @interface StringCalculator : NSObject
 
+- (id)init;
 - (int)add:(NSString*)input;
+
+@property NSNumberFormatter *numberFormatter;
 
 @end

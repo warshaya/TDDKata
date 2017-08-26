@@ -10,9 +10,24 @@
 
 @implementation StringCalculator
 
-- (int)add:(NSString *)input
+- (id)init
 {
-   return 0;
+   self = [super init];
+   if (self)
+   {
+      _numberFormatter = [[NSNumberFormatter alloc] init];
+   }
+   return self;
+}
+
+- (int)add:(NSString*)input
+{
+   if ( [input isEqualToString:@""] )
+   {
+      return 0;
+   }
+   NSNumber *resultNumber = [_numberFormatter numberFromString:input];
+   return [resultNumber intValue];;
 }
 
 @end
