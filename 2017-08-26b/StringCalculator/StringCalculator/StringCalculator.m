@@ -28,8 +28,8 @@
    }
    NSArray<NSString *> *boxedInput = [input componentsSeparatedByString:@","];
    NSNumber *tempNumber = [[NSNumber alloc] init];
-   int result =0;
-   for ( int i = 0; i<[boxedInput count]; i++ )
+   int result = 0;
+   for ( int i = 0; i < [boxedInput count]; i++ )
    {
       tempNumber = [_numberFormatter numberFromString:[boxedInput objectAtIndex:i]];
       result += [tempNumber intValue];
