@@ -42,6 +42,54 @@
    XCTAssertEqual(2, result);
 }
 
+- (void)testAdd_BiggerNumber_ReturnsTheSameNumber
+{
+   StringCalculator *myCalc = [[StringCalculator alloc] init];
+   NSString *input = @"290302";
+   int result = [myCalc add:input];
+   XCTAssertEqual( result, 290302 );
+}
+
+- (void)testAdd_NumberWithZeroInFront_ReturnsNumber
+{
+   StringCalculator *myCalc = [[StringCalculator alloc] init];
+   NSString *input = @"00005";
+   int result = [myCalc add:input];
+   XCTAssertEqual( result, 5 );
+}
+
+- (void)testAdd_TwoOnesSeparatedByComma_ReturnsTwo
+{
+   StringCalculator *myCalc = [[StringCalculator alloc] init];
+   NSString *input = @"1,1";
+   int result = [myCalc add:input];
+   XCTAssertEqual( result, 2 );
+}
+
+- (void)testAdd_TwoRandomNumbersWithComma_ReturnsSum
+{
+   StringCalculator *myCalc = [[StringCalculator alloc] init];
+   NSString *input = @"23,567";
+   int result = [myCalc add:input];
+   XCTAssertEqual( result, 590 );
+}
+
+- (void)testAdd_ThreeNumbers_ReturnsSum
+{
+   StringCalculator *myCalc = [[StringCalculator alloc] init];
+   NSString *input = @"1,2,3";
+   int result = [myCalc add:input];
+   XCTAssertEqual( result, 6 );
+}
+
+- (void)testAdd_TenNumbers_ReturnsSum
+{
+   StringCalculator *myCalc = [[StringCalculator alloc] init];
+   NSString *input = @"10,23,45,67,98,3,100,312,9,7";
+   int result = [myCalc add:input];
+   XCTAssertEqual( result, 674 );
+}
+
 @end
 
 
@@ -66,10 +114,7 @@
 
 
 /*
- - (void)setUp {
- [super setUp];
- // Put setup code here. This method is called before the invocation of each test method in the class.
- }
+
  
  - (void)tearDown {
  // Put teardown code here. This method is called after the invocation of each test method in the class.
