@@ -6,3 +6,6 @@ Compile test dll
 
 Execute tests
    mstest -testcontainer:StringCalculatorTests.dll
+
+
+Compile in mono

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<test-run id="2" testcasecount="1" result="Failed" label="Error" total="1" passed="0" failed="1" inconclusive="0" skipped="0" asserts="0" engine-version="3.7.0.0" clr-version="4.0.30319.42000" start-time="2017-08-16 02:16:36Z" end-time="2017-08-16 02:16:40Z" duration="3.499756">
+  <command-line><![CDATA[/home/aaron/code/TDDKata/2017-08-08/NUnit.ConsoleRunner.3.7.0/tools/nunit3-console.exe OnlyTest.dll --framework=mono]]></command-line>
+  <test-suite type="Assembly" id="0" name="" fullname="" runstate="NotRunnable" testcasecount="1" result="Failed" label="Error" start-time="2017-08-16 02:16:40Z" end-time="2017-08-16 02:16:40Z" duration="0.001" total="1" passed="0" failed="1" inconclusive="0" skipped="0" asserts="0">
+    <failure>
+      <message><![CDATA[An exception occurred in the driver while loading tests.]]></message>
+      <stack-trace><![CDATA[
+
+Server stack trace: 
+  at NUnit.Engine.Runners.DirectTestRunner.LoadDriver (NUnit.Engine.Extensibility.IFrameworkDriver driver, System.String testFile, NUnit.Engine.TestPackage subPackage) [0x0003a] in <1e8ad6af4c6f4686ad7e5f9e67020b3b>:0 
+  at NUnit.Engine.Runners.DirectTestRunner.LoadPackage () [0x000c4] in <1e8ad6af4c6f4686ad7e5f9e67020b3b>:0 
+  at NUnit.Engine.Runners.TestDomainRunner.LoadPackage () [0x00017] in <1e8ad6af4c6f4686ad7e5f9e67020b3b>:0 
+  at NUnit.Engine.Runners.DirectTestRunner.EnsurePackageIsLoaded () [0x00008] in <1e8ad6af4c6f4686ad7e5f9e67020b3b>:0 
+  at NUnit.Engine.Runners.DirectTestRunner.RunTests (NUnit.Engine.ITestEventListener listener, NUnit.Engine.TestFilter filter) [0x00000] in <1e8ad6af4c6f4686ad7e5f9e67020b3b>:0 
+  at NUnit.Engine.Runners.AbstractTestRunner.Run (NUnit.Engine.ITestEventListener listener, NUnit.Engine.TestFilter filter) [0x00000] in <1e8ad6af4c6f4686ad7e5f9e67020b3b>:0 
+  at NUnit.Engine.Agents.RemoteTestAgent.Run (NUnit.Engine.ITestEventListener listener, NUnit.Engine.TestFilter filter) [0x00000] in <1e8ad6af4c6f4686ad7e5f9e67020b3b>:0 
+  at (wrapper managed-to-native) System.Runtime.Remoting.RemotingServices:InternalExecute (System.Reflection.MethodBase,object,object[],object[]&)
+  at System.Runtime.Remoting.RemotingServices.InternalExecuteMessage (System.MarshalByRefObject target, System.Runtime.Remoting.Messaging.IMethodCallMessage reqMsg) [0x000b5] in <a07d6bf484a54da2861691df910339b1>:0 
+
+Exception rethrown at [0]: 
+  at (wrapper managed-to-native) System.Object:__icall_wrapper_mono_remoting_wrapper (intptr,intptr)
+  at (wrapper remoting-invoke) NUnit.Engine.Agents.RemoteTestAgent:Run (NUnit.Engine.ITestEventListener,NUnit.Engine.TestFilter)
+  at NUnit.Engine.Runners.ProcessRunner.RunTests (NUnit.Engine.ITestEventListener listener, NUnit.Engine.TestFilter filter) [0x00025] in <1e8ad6af4c6f4686ad7e5f9e67020b3b>:0 ]]></stack-trace>
+    </failure>
+  </test-suite>
+</test-run>
