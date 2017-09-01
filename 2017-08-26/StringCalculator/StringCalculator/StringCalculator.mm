@@ -6,7 +6,7 @@
 //  Copyright © 2017 AaronW. All rights reserved.
 //
 
-#import "StringCalculator.h"
+#import "StringCalculator.hpp"
 
 @implementation StringCalculator
 

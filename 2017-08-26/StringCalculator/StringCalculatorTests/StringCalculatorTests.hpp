@@ -12,10 +12,5 @@
 
 @interface StringCalculatorTests : NSObject
 
-TEST_F(StringCalculatorTestsFixure, Basic_Test_RunsAndPasses)
-{
-   int value = 1;
-   ASSERT_EQ( value, 1 );
-}
-
 @end
+

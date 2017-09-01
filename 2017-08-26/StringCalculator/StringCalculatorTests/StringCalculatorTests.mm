@@ -6,8 +6,13 @@
 //  Copyright © 2017 AaronW. All rights reserved.
 //
 
-#import "StringCalculatorTests.h"
+#import "StringCalculatorTests.hpp"
+#import "StringCalculator.hpp"
+#import <gtest/gtest.h>
 
 @implementation StringCalculatorTests
 
+
+
 @end
+

@@ -26,6 +26,10 @@
    {
       return 0;
    }
+   if ( [input containsString:@"\n"])
+   {
+      input = [input stringByReplacingOccurrencesOfString:@"\n" withString:@","];
+   }
    NSArray<NSString *> *boxedInput = [input componentsSeparatedByString:@","];
    NSNumber *tempNumber = [[NSNumber alloc] init];
    int result = 0;

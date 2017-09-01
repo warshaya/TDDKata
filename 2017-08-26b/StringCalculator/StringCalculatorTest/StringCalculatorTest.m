@@ -90,6 +90,38 @@
    XCTAssertEqual( result, 674 );
 }
 
+- (void)testAdd_EmptyNumberInList_ReturnedSumCountsItAsZero
+{
+   StringCalculator *myCalc = [[StringCalculator alloc] init];
+   NSString *input = @"1,2,,4";
+   int result = [myCalc add:input];
+   XCTAssertEqual( result, 7 );
+}
+
+- (void)testAdd_NewLineDelimiterBetweenOnes_ReturnsTwo
+{
+   StringCalculator *myCalc = [[StringCalculator alloc] init];
+   NSString *input = @"1\n1";
+   int result = [myCalc add:input];
+   XCTAssertEqual( result, 2 );
+}
+
+- (void)testAdd_NewLineDelimiterMixedWithCommas_ReturnsSum
+{
+   StringCalculator *myCalc = [[StringCalculator alloc] init];
+   NSString *input = @"1,2\n3\n4,5";
+   int result = [myCalc add:input];
+   XCTAssertEqual( result, 15 );
+}
+
+- (void)testAdd_EmtpyNumberInbetweenNewLines_ReturnsSumCountsItAsZero
+{
+   StringCalculator *myCalc = [[StringCalculator alloc] init];
+   NSString *input = @"1\n\n2";
+   int result = [myCalc add:input];
+   XCTAssertEqual( result, 3 );
+}
+
 @end
 
 
