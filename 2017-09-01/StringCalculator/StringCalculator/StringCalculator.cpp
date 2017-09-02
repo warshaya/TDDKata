@@ -16,6 +16,10 @@ int StringCalculator :: add( std::string input )
    {
       return result;
    }
+   while ( input.find( '\n') != std::string::npos )
+   {
+      input = input.replace( input.find_first_of( '\n' ), 1, "," );
+   }
    if ( input.find( ',' ) != std::string::npos )
    {
       std::list<std::string> splitStringAroundCommas;

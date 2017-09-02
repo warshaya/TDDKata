@@ -33,7 +33,7 @@ TEST( StringCalculator, Add_Two_ReturnsTwo )
    EXPECT_EQ( result, 2 );
 }
 
-TEST( StringCalculator, Add_ArbNumber_ReturnsSameNumber )
+TEST( StringCalculator, Add_ArbitrarySingleNumber_ReturnsSameNumber )
 {
    StringCalculator * myCalc = new StringCalculator;
    std::string input = "929508271";                   // 9 digits are too many
@@ -96,3 +96,64 @@ TEST( StringCalculator, Add_TwelveNumbers_ReturnsTheSum )
    int result = myCalc->add( input );
    EXPECT_EQ( result, 66 );
 }
+
+TEST( StringCalculator, Add_NewlineDelmiterOnes_ReturnsTwo )
+{
+   StringCalculator *myCalc = new StringCalculator;
+   std::string input = "1\n1";
+   int result = myCalc->add( input );
+   EXPECT_EQ( result, 2 );
+}
+
+TEST( StringCalculator, Add_NewlineAndComma_ReturnsSum )
+{
+   StringCalculator *myCalc = new StringCalculator;
+   std::string input = "2,4\n5";
+   int result = myCalc->add( input );
+   EXPECT_EQ( result, 11 );
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

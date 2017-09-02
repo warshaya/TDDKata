@@ -9,7 +9,6 @@
 #ifndef StringCalculator_hpp
 #define StringCalculator_hpp
 
-#include <stdio.h>
 #include <string>
 
 class StringCalculator
