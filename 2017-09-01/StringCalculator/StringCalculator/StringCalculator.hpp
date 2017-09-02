@@ -10,5 +10,12 @@
 #define StringCalculator_hpp
 
 #include <stdio.h>
+#include <string>
+
+class StringCalculator
+{
+public:
+   int add( std::string input );
+};
 
 #endif /* StringCalculator_hpp */
