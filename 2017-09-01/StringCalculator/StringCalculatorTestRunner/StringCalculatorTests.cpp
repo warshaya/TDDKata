@@ -105,7 +105,7 @@ TEST( StringCalculator, Add_NewlineDelmiterOnes_ReturnsTwo )
    EXPECT_EQ( result, 2 );
 }
 
-TEST( StringCalculator, Add_NewlineAndComma_ReturnsSum )
+TEST( StringCalculator, Add_NewlineAndCommaMixed_ReturnsSum )
 {
    StringCalculator *myCalc = new StringCalculator;
    std::string input = "2,4\n5";
