@@ -6,10 +6,8 @@
 //  Copyright © 2017 AaronW. All rights reserved.
 //
 
-#include "StringCalculatorTests.hpp"
 #include <gtest/gtest.h>
-#include "StringCalculator.h"
-#include <Foundation/Foundation.h>
+#import "StringCalculator.h"
 
 TEST( blank, blank2 )
 {

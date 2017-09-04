@@ -8,9 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		8DF412C11F5A02CD00D848E7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DF412C01F5A02CD00D848E7 /* main.m */; };
-		8DF412CE1F5A030900D848E7 /* main.mm in Sources */ = {isa = PBXBuildFile; fileRef = 8DF412CD1F5A030900D848E7 /* main.mm */; };
+		8DF412CE1F5A030900D848E7 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8DF412CD1F5A030900D848E7 /* main.cpp */; };
 		8DF413071F5A036900D848E7 /* libgtest.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DF412FA1F5A034900D848E7 /* libgtest.a */; };
-		8DF4130A1F5A03F700D848E7 /* StringCalculator.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DF413091F5A03F700D848E7 /* StringCalculator.m */; };
+		8DF4130A1F5A03F700D848E7 /* StringCalculator.mm in Sources */ = {isa = PBXBuildFile; fileRef = 8DF413091F5A03F700D848E7 /* StringCalculator.mm */; };
 		8DF4130D1F5A04A600D848E7 /* StringCalculatorTests.mm in Sources */ = {isa = PBXBuildFile; fileRef = 8DF4130B1F5A04A600D848E7 /* StringCalculatorTests.mm */; };
 /* End PBXBuildFile section */
 
@@ -98,12 +98,11 @@
 		8DF412BD1F5A02CD00D848E7 /* StringCalculator */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = StringCalculator; sourceTree = BUILT_PRODUCTS_DIR; };
 		8DF412C01F5A02CD00D848E7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		8DF412CB1F5A030900D848E7 /* StringCalculatorTestRunner */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = StringCalculatorTestRunner; sourceTree = BUILT_PRODUCTS_DIR; };
-		8DF412CD1F5A030900D848E7 /* main.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = main.mm; sourceTree = "<group>"; };
+		8DF412CD1F5A030900D848E7 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		8DF412D21F5A034400D848E7 /* gtest.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = gtest.xcodeproj; path = ../googletest/googletest/xcode/gtest.xcodeproj; sourceTree = "<group>"; };
 		8DF413081F5A03F700D848E7 /* StringCalculator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StringCalculator.h; sourceTree = "<group>"; };
-		8DF413091F5A03F700D848E7 /* StringCalculator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StringCalculator.m; sourceTree = "<group>"; };
-		8DF4130B1F5A04A600D848E7 /* StringCalculatorTests.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = StringCalculatorTests.mm; sourceTree = "<group>"; };
-		8DF4130C1F5A04A600D848E7 /* StringCalculatorTests.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = StringCalculatorTests.hpp; sourceTree = "<group>"; };
+		8DF413091F5A03F700D848E7 /* StringCalculator.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = StringCalculator.mm; sourceTree = "<group>"; };
+		8DF4130B1F5A04A600D848E7 /* StringCalculatorTests.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = StringCalculatorTests.mm; path = StringCalculatorTestRunner/StringCalculatorTests.mm; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,7 +147,8 @@
 			children = (
 				8DF412C01F5A02CD00D848E7 /* main.m */,
 				8DF413081F5A03F700D848E7 /* StringCalculator.h */,
-				8DF413091F5A03F700D848E7 /* StringCalculator.m */,
+				8DF413091F5A03F700D848E7 /* StringCalculator.mm */,
+				8DF4130B1F5A04A600D848E7 /* StringCalculatorTests.mm */,
 			);
 			path = StringCalculator;
 			sourceTree = "<group>";
@@ -157,9 +157,7 @@
 			isa = PBXGroup;
 			children = (
 				8DF412D21F5A034400D848E7 /* gtest.xcodeproj */,
-				8DF412CD1F5A030900D848E7 /* main.mm */,
-				8DF4130B1F5A04A600D848E7 /* StringCalculatorTests.mm */,
-				8DF4130C1F5A04A600D848E7 /* StringCalculatorTests.hpp */,
+				8DF412CD1F5A030900D848E7 /* main.cpp */,
 			);
 			path = StringCalculatorTestRunner;
 			sourceTree = "<group>";
@@ -316,7 +314,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8DF4130A1F5A03F700D848E7 /* StringCalculator.m in Sources */,
+				8DF4130A1F5A03F700D848E7 /* StringCalculator.mm in Sources */,
 				8DF412C11F5A02CD00D848E7 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -326,7 +324,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8DF4130D1F5A04A600D848E7 /* StringCalculatorTests.mm in Sources */,
-				8DF412CE1F5A030900D848E7 /* main.mm in Sources */,
+				8DF412CE1F5A030900D848E7 /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -477,6 +475,7 @@
 				8DF412C61F5A02CD00D848E7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8DF412CF1F5A030900D848E7 /* Build configuration list for PBXNativeTarget "StringCalculatorTestRunner" */ = {
 			isa = XCConfigurationList;
@@ -485,6 +484,7 @@
 				8DF412D11F5A030900D848E7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

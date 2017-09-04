@@ -103,7 +103,7 @@
 		8DF412741F59FD7400D848E7 /* StringCalculatorTestRunner */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = StringCalculatorTestRunner; sourceTree = BUILT_PRODUCTS_DIR; };
 		8DF412761F59FD7400D848E7 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		8DF4127B1F59FDC000D848E7 /* gtest.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = gtest.xcodeproj; path = ../googletest/googletest/xcode/gtest.xcodeproj; sourceTree = "<group>"; };
-		8DF413181F5B562600D848E7 /* StringCalculatorTests.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = StringCalculatorTests.cpp; sourceTree = "<group>"; };
+		8DF413181F5B562600D848E7 /* StringCalculatorTests.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = StringCalculatorTests.cpp; path = StringCalculatorTestRunner/StringCalculatorTests.cpp; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,6 +149,7 @@
 				8DF412661F59FC5400D848E7 /* main.cpp */,
 				8DF4126D1F59FCAC00D848E7 /* StringCalculator.cpp */,
 				8DF4126E1F59FCAC00D848E7 /* StringCalculator.hpp */,
+				8DF413181F5B562600D848E7 /* StringCalculatorTests.cpp */,
 			);
 			path = StringCalculator;
 			sourceTree = "<group>";
@@ -158,7 +159,6 @@
 			children = (
 				8DF4127B1F59FDC000D848E7 /* gtest.xcodeproj */,
 				8DF412761F59FD7400D848E7 /* main.cpp */,
-				8DF413181F5B562600D848E7 /* StringCalculatorTests.cpp */,
 			);
 			path = StringCalculatorTestRunner;
 			sourceTree = "<group>";
