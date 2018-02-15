@@ -6,7 +6,10 @@ function StringCalculator() {
     if (isEmptyString(input)) {
       return 0;
     } else if (containsSingleValue(input)) {
-      return Number.parseInt(input, 10);
+debugger;
+      let value = Number.parseInt(input, 10);
+      value = checkForNegativeValue(value);
+      return value;
     } else {
       let values = input.split(',');
       let total = 0;
@@ -51,6 +54,13 @@ function StringCalculator() {
 
   function containsCustomDelimiter (input) {
     return (input.indexOf('//') == 0);
+  }
+
+  function checkForNegativeValue (number) {
+    if (number < 0) {
+      throw "number is negative!";
+    }
+    return number;
   }
 
 }

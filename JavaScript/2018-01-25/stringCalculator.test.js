@@ -102,3 +102,10 @@ test('add_customDelimieterThreeNumbers_ReturnsTheirSum', () => {
   let result = new StringCalculator().add("//;\n1;1;1");
   expect(result).toBe(3);
 });
+
+test('add_negativeOne_throwsAnException', () => {
+  expect( () => {
+    new StringCalculator().add("-1");
+  }).toThrow(); 
+});
+
