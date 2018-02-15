@@ -6,7 +6,7 @@ function StringCalculator() {
     if (isEmptyString(input)) {
       return 0;
     } else if (containsSingleValue(input)) {
-      return Number.parseInt(input);
+      return Number.parseInt(input, 10);
     } else {
       let values = input.split(',');
       let total = 0;
