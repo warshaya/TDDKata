@@ -1,3 +1,4 @@
+"use strict";
 const StringCalculator = require('./stringCalculator');
 
 test('add_emptyString_returnsZero', () => {
@@ -52,11 +53,11 @@ test('add_manyNumbers_ReturnsTheSum', () => {
 test('add_randomNumberOfIntegersLessThan1000_ReturnsTheSum', () => {
   var inputs = [];
   var size = Math.floor(Math.random() * 100);
-  for (i=0; i<size; i++) {
+  for (var i = 0; i < size; i++) {
     inputs.push(Math.floor(Math.random() * 1000));
   }
   var total = 0;
-  for (i=0; i<inputs.length; i++) {
+  for (var i = 0; i < inputs.length; i++) {
     total += inputs[i];
   }
   var inputString = inputs.toString();

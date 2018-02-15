@@ -1,3 +1,4 @@
+"use strict";
 function StringCalculator() {
 
   this.add = function (input) {
@@ -9,7 +10,7 @@ function StringCalculator() {
       input = input.replace('\n', ',');
       var values = input.split(',');
       var total = 0;
-      for (i = 0; i < values.length; i++) {
+      for (var i = 0; i < values.length; i++) {
         total += Number.parseInt(values[i]);
       }
       return total;
