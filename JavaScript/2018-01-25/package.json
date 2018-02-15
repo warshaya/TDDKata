@@ -1,5 +1,10 @@
 {
   "scripts": {
     "test": "jest"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "jest": "^22.2.2",
+    "node-inspect": "^1.11.3"
   }
 }
