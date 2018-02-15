@@ -6,7 +6,6 @@ function StringCalculator() {
     if (isEmptyString(input)) {
       return 0;
     } else if (containsSingleValue(input)) {
-debugger;
       let value = Number.parseInt(input, 10);
       value = checkForNegativeValue(value);
       return value;
@@ -16,7 +15,7 @@ debugger;
       let i;
       let stop = values.length;
       for (i = 0; i < stop; i++) {
-        total += Number.parseInt(values[i]);
+        total += Number.parseInt(values[i], 10);
       }
       return total;
     }
@@ -58,7 +57,7 @@ debugger;
 
   function checkForNegativeValue (number) {
     if (number < 0) {
-      throw "number is negative!";
+      throw "negatives not allowed: -1";
     }
     return number;
   }
