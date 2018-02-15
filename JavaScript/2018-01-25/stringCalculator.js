@@ -3,15 +3,16 @@ function StringCalculator() {
 
   this.add = function (input) {
     input = cleanInput(input);
+    let values = input.split(',');
+    values = checkForNegativeValue(values);
     if (isEmptyString(input)) {
       return 0;
     } else {
-      let values = input.split(',');
       let total = 0;
       let i;
       let stop = values.length;
       for (i = 0; i < stop; i++) {
-        total += checkForNegativeValue(Number.parseInt(values[i], 10));
+        total += Number.parseInt(values[i], 10);
       }
       return total;
     }
@@ -35,10 +36,6 @@ function StringCalculator() {
     return (input == "");
   }
 
-  function containsSingleValue (input) {
-    return !(containsComma(input));
-  }
-
   function containsComma (input) {
     return (input.indexOf(',') >= 0);
   }
@@ -51,11 +48,19 @@ function StringCalculator() {
     return (input.indexOf('//') == 0);
   }
 
-  function checkForNegativeValue (number) {
-    if (number < 0) {
-      throw "negatives not allowed: -1";
+  function checkForNegativeValue (arrayOfNumbers) {
+    let i;
+    let stop = arrayOfNumbers.length;
+    let negativeNums = [];
+    for (i = 0; i < stop; i++) {
+      if (arrayOfNumbers[i] < 0) {
+        negativeNums.push(arrayOfNumbers[i]);
+      }
     }
-    return number;
+    if (negativeNums.length > 0) {
+      throw "negatives not allowed: " + negativeNums.toString();
+    }
+    return arrayOfNumbers;
   }
 
 }

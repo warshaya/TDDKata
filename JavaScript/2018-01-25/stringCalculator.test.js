@@ -109,3 +109,38 @@ test('add_negativeOne_throwsAnException', () => {
   }).toThrow(); 
 });
 
+test('add_negativeNumber_ExceptionMessageTextIsCorrect', () => {
+  expect( () => {
+    new StringCalculator().add("-1");
+  }).toThrow('negatives not allowed');
+});
+
+test('add_negativeNumber_ExceptionMessageListsTheNegativeNumber', () => {
+  let message = '';
+  try {
+     new StringCalculator().add('-1');
+  } catch (e) {
+    message = e;
+  }
+  expect(message).toMatch("-1");
+});
+
+test('add_differentNegativeNumber_ExceptionMessageListsCorrectNumber', () => {
+  let message = '';
+  try {
+    new StringCalculator().add("-2");
+  } catch (e) {
+    message = e;
+  }
+  expect(message).toMatch('-2');
+});
+
+test('add_twoMultipleNegativeNumbers_ExceptionMessageListsAllNumbers', () => {
+  let message = '';
+  try {
+    new StringCalculator().add("1,-2,3,4,-5");
+  } catch(e) {
+    message = e;
+  }
+  expect(message).toMatch('-2,-5');
+});
