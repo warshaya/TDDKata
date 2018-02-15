@@ -5,17 +5,13 @@ function StringCalculator() {
     input = cleanInput(input);
     if (isEmptyString(input)) {
       return 0;
-    } else if (containsSingleValue(input)) {
-      let value = Number.parseInt(input, 10);
-      value = checkForNegativeValue(value);
-      return value;
     } else {
       let values = input.split(',');
       let total = 0;
       let i;
       let stop = values.length;
       for (i = 0; i < stop; i++) {
-        total += Number.parseInt(values[i], 10);
+        total += checkForNegativeValue(Number.parseInt(values[i], 10));
       }
       return total;
     }
