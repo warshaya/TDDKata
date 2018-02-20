@@ -2,3 +2,4 @@
 xcuserdatad/
 xcuserdata/
 node_modules/
+*.swp
