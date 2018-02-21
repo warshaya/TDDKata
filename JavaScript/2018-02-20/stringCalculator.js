@@ -1,9 +1,9 @@
+"use strict";
 let stringCalculatorFactory;
 
 (function () {
 
   const proto = {
-
     add (input) {
       if (input == "") {
         return zeroFunc();
@@ -11,7 +11,6 @@ let stringCalculatorFactory;
         return Number.parseInt(input, 10);
       }
     }
-
   }
 
   stringCalculatorFactory = function () {

@@ -1,3 +1,5 @@
+"use strict";
+
 const stringCalculatorFactory = require('./stringCalculator');
 
 test('factory_createsAStringCalculator', () => {
