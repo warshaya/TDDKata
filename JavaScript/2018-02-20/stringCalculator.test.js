@@ -15,3 +15,15 @@ test('add_emptyString_returnsZero', () => {
   let result = calc.add("");
   expect(result).toBe(0);
 });
+
+test('add_zero_returnsZero', () => {
+  let calc = stringCalculatorFactory();
+  let result = calc.add("0");
+  expect(result).toBe(0);
+});
+
+test('add_one_returnsOne', () => {
+  let calc = stringCalculatorFactory();
+  let result = calc.add("1");
+  expect(result).toBe(1);
+});

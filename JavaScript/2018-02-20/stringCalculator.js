@@ -1,6 +1,10 @@
 const proto = {
-  add () {
-    return 0;
+  add (input) {
+    if (input == "") {
+      return 0;
+    } else {
+      return Number.parseInt(input, 10);
+    }
   }
 }
 
