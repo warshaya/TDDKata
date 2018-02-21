@@ -3,3 +3,4 @@ xcuserdatad/
 xcuserdata/
 node_modules/
 *.swp
+.DS_Store
