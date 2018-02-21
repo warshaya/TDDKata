@@ -1,5 +1,7 @@
 const proto = {
-  add () {}
+  add () {
+    return 0;
+  }
 }
 
 function stringCalculatorFactory () {
