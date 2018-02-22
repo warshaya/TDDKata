@@ -41,3 +41,9 @@ test('add_twoNumbers_returnsTheSum', () => {
   let result = calc.add("1,2");
   expect(result).toBe(3);
 });
+
+test('add_threeNumbers_returnsTheSum', () => {
+  let calc = stringCalculator();
+  let result = calc.add('1,2,3,4');
+  expect(result).toBe(10);
+});
