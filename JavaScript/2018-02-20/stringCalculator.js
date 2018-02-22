@@ -18,7 +18,9 @@ let stringCalculator;
 
   }
 
-  function zeroFunc () {return 0;}
+  function zeroFunc () {
+    return 0;
+  }
 
   function parseIntArray (array) {
     let length = array.length;
