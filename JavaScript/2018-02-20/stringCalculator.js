@@ -11,13 +11,7 @@ let stringCalculator;
         return zeroFunc();
       } else {
         let inputArr = input.split(',');
-        let values = [inputArr.length];
-        let total = 0;
-        let i;
-        let stop = inputArr.length;
-        for (i = 0; i < stop; i++) {
-          values[i] = Number.parseInt(inputArr[i], 10);
-        }
+        let values = parseIntArray(inputArr);
         return values.reduce((t, v) => t += v, 0);
       }
     }
@@ -25,6 +19,16 @@ let stringCalculator;
   }
 
   function zeroFunc () {return 0;}
+
+  function parseIntArray (array) {
+    let length = array.length;
+    let values = [length];
+    let i;
+    for (i = 0; i < length; i++) {
+      values[i] = Number.parseInt(array[i], 10);
+    }
+    return values;
+  }
 
   stringCalculator = function () {
     return Object.create(proto);
