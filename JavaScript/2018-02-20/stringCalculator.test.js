@@ -29,3 +29,15 @@ test('add_one_returnsOne', () => {
   let result = calc.add("1");
   expect(result).toBe(1);
 });
+
+test('add_two_returnsTwo', () => {
+  let calc = stringCalculator();
+  let result = calc.add('2');
+  expect(result).toBe(2);
+});
+
+test('add_twoNumbers_returnsTheSum', () => {
+  let calc = stringCalculator();
+  let result = calc.add("1,2");
+  expect(result).toBe(3);
+});
