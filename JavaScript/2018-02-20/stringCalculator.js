@@ -10,14 +10,15 @@ let stringCalculator;
       if (input == "") {
         return zeroFunc();
       } else {
-        let values = input.split(',');
+        let inputArr = input.split(',');
+        let values = [inputArr.length];
         let total = 0;
         let i;
-        let stop = values.length;
+        let stop = inputArr.length;
         for (i = 0; i < stop; i++) {
-          total += Number.parseInt(values[i], 10);
+          values[i] = Number.parseInt(inputArr[i], 10);
         }
-        return total;
+        return values.reduce((t, v) => t += v, 0);
       }
     }
 
