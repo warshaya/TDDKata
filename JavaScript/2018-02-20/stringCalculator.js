@@ -10,12 +10,17 @@ let stringCalculator;
       if (input == "") {
         return zeroFunc();
       } else {
-        let inputArr = input.split(',');
+        let cleanedInput = cleanInput(input);
+        let inputArr = cleanedInput.split(',');
         let values = parseIntArray(inputArr);
         return values.reduce((t, v) => t += v, 0);
       }
     }
 
+  }
+
+  stringCalculator = function () {
+    return Object.create(proto);
   }
 
   function zeroFunc () {
@@ -32,8 +37,8 @@ let stringCalculator;
     return values;
   }
 
-  stringCalculator = function () {
-    return Object.create(proto);
+  function cleanInput (input) {
+    return input.replace(/\n/g, ',');
   }
 
 })();

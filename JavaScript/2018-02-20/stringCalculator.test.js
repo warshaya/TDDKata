@@ -54,9 +54,9 @@ test('add_unknownAmtOfNums_returnsTheSum', () => {
   }
   let randoms = [];
   let i;
-  let stop = getRandomInt(Number.MAX_SAFE_INTEGER / 1000000000);
+  let stop = getRandomInt(100000);
   for (i = 0; i < stop; i++) {
-    randoms.push(getRandomInt(100000));
+    randoms.push(getRandomInt(Number.MAX_SAFE_INTEGER / 100000000));
   }
   let expectedTotal = randoms.reduce((t,v) => t += v, 0);
   let input = randoms.toString();
@@ -64,6 +64,32 @@ test('add_unknownAmtOfNums_returnsTheSum', () => {
   let result = calc.add(input);
   expect(result).toBe(expectedTotal);
 });
+
+test('add_newlineSeparator_returnsSum', () => {
+  let calc = stringCalculator();
+  let result = calc.add("1\n1");
+  expect(result).toBe(2);
+});
+
+test('add_2newlineSeparators_returnsSum', () => {
+  let result = stringCalculator().add("1\n2\n3");
+  expect(result).toBe(6);
+});
+
+test('add_mixedNewlinesAndCommas_returnsSum', () => {
+  let result = stringCalculator().add("1\n2,3\n4,5");
+  expect(result).toBe(15);
+});
+
+
+
+
+
+
+
+
+
+
 
 
 
