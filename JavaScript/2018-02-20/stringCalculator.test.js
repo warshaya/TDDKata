@@ -47,3 +47,24 @@ test('add_threeNumbers_returnsTheSum', () => {
   let result = calc.add('1,2,3,4');
   expect(result).toBe(10);
 });
+
+test('add_unknownAmtOfNums_returnsTheSum', () => {
+  function getRandomInt(max) {
+    return Math.floor(Math.random() * Math.floor(max));
+  }
+  let randoms = [];
+  let i;
+  let stop = getRandomInt(Number.MAX_SAFE_INTEGER / 1000000000);
+  for (i = 0; i < stop; i++) {
+    randoms.push(getRandomInt(100000));
+  }
+  let expectedTotal = randoms.reduce((t,v) => t += v, 0);
+  let input = randoms.toString();
+  let calc = stringCalculator();
+  let result = calc.add(input);
+  expect(result).toBe(expectedTotal);
+});
+
+
+
+
