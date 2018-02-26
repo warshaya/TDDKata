@@ -38,6 +38,10 @@ let stringCalculator;
   }
 
   function cleanInput (input) {
+    if (input.substring(0,2) == '//') {
+      let endOfPrefix = input.search(/\n/);
+      input = input.substring(endOfPrefix + 1);
+    }
     return input.replace(/\n/g, ',');
   }
 

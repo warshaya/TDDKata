@@ -81,9 +81,15 @@ test('add_mixedNewlinesAndCommas_returnsSum', () => {
   expect(result).toBe(15);
 });
 
+test('add_aCustomDelimiterAndZero_returnsZero', () => {
+  let result = stringCalculator().add("//;\n0");
+  expect(result).toBe(0);
+});
 
-
-
+test('add_aCustomDelimiterAndOne_returnsOne', () => {
+  let result = stringCalculator().add("//;\n1");
+  expect(result).toBe(1);
+});
 
 
 
