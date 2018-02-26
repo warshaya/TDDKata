@@ -91,12 +91,15 @@ test('add_aCustomDelimiterAndOne_returnsOne', () => {
   expect(result).toBe(1);
 });
 
-test('add_aCustomDerlimiter_returnsSum', () => {
+test('add_aCustomDelimiter_returnsSum', () => {
   let result = stringCalculator().add("//;\n1;2");
   expect(result).toBe(3);
 });
 
-
+test('add_differentCustomDelimiter_returnsSum', () => {
+  let result = stringCalculator().add("//->)*ok\n1->)*ok2->)*ok7");
+  expect(result).toBe(10);
+});
 
 
 
