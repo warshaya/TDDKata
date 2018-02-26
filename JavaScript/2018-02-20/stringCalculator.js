@@ -43,8 +43,8 @@ let stringCalculator;
       let endOfPrefix = input.search(/\n/);
       let customDelimiter = input.substring(2, endOfPrefix);
       let detachedInput = input.substring(endOfPrefix + 1);
-      let regExCustomDelim = escapeRegExp(customDelimiter);
-      cleanerInput = detachedInput.replace(new RegExp(regExCustomDelim, 'g'), ',');
+      let regexCustomDelim = escapeRegExp(customDelimiter);
+      cleanerInput = detachedInput.replace(new RegExp(regexCustomDelim, 'g'), ',');
     }
     return cleanerInput.replace(/\n/g, ',');
   }
