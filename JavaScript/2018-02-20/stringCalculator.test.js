@@ -91,6 +91,11 @@ test('add_aCustomDelimiterAndOne_returnsOne', () => {
   expect(result).toBe(1);
 });
 
+test('add_aCustomDerlimiter_returnsSum', () => {
+  let result = stringCalculator().add("//;\n1;2");
+  expect(result).toBe(3);
+});
+
 
 
 

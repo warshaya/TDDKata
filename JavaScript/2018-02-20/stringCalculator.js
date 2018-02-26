@@ -38,11 +38,14 @@ let stringCalculator;
   }
 
   function cleanInput (input) {
+    let cleanerInput = input;
     if (input.substring(0,2) == '//') {
       let endOfPrefix = input.search(/\n/);
-      input = input.substring(endOfPrefix + 1);
+      let customDelimiter = input.substring(2, endOfPrefix);
+      let detachedInput = input.substring(endOfPrefix + 1);
+      cleanerInput = detachedInput.replace(new RegExp(customDelimiter, 'g'), ',');
     }
-    return input.replace(/\n/g, ',');
+    return cleanerInput.replace(/\n/g, ',');
   }
 
 })();
