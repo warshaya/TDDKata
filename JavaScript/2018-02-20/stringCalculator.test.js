@@ -107,8 +107,7 @@ test('add_inputNegativeNumber_throwsException', () => {
   }).toThrow();
 });
 
-test('add_thownExpection_givesCorrectMsg', () => {
-debugger;
+test('add_thownException_givesCorrectMsg', () => {
   let msg;
   try {
     stringCalculator().add("-1");
@@ -118,7 +117,25 @@ debugger;
   expect(msg).toMatch("negatives not allowed");
 });
 
+test('add_thrownException_listsNumber', () => {
+  let msg;
+  try {
+    stringCalculator().add("-1");
+  } catch (e) {
+    msg = e;
+  }
+  expect(msg).toMatch("-1");
+});
 
+test('add_thrownException_listsMultipleNumbers', () => {
+  let msg;
+  try {
+    stringCalculator().add("-1,-2");
+  } catch (e) {
+    msg = e;
+  }
+  expect(msg).toMatch("-1,-2");
+});
 
 
 

@@ -31,11 +31,15 @@ let stringCalculator;
     let length = array.length;
     let values = [length];
     let i;
+    let negatives = [];
     for (i = 0; i < length; i++) {
       values[i] = Number.parseInt(array[i], 10);
       if (values[i] < 0) {
-        throw "negatives not allowed";
+        negatives.push(values[i]);
       }
+    }
+    if (negatives.length > 0) {
+      throw "negatives not allowed:" + negatives.toString();
     }
     return values;
   }
