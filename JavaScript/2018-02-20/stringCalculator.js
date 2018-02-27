@@ -13,6 +13,7 @@ let stringCalculator;
         let cleanedInput = cleanInput(input);
         let inputArr = cleanedInput.split(',');
         let values = parseIntArray(inputArr);
+        checkForNegativeValues(values);
         return values.reduce((t, v) => t += v, 0);
       }
     }
@@ -31,17 +32,24 @@ let stringCalculator;
     let length = array.length;
     let values = [length];
     let i;
-    let negatives = [];
     for (i = 0; i < length; i++) {
       values[i] = Number.parseInt(array[i], 10);
-      if (values[i] < 0) {
-        negatives.push(values[i]);
+    }
+    return values;
+  }
+
+  function checkForNegativeValues (array) {
+    let stop = array.length;
+    let i;
+    let negatives = []
+    for (i = 0; i < stop; i++) {
+      if (array[i] < 0) {
+        negatives.push(array[i]);
       }
     }
     if (negatives.length > 0) {
       throw "negatives not allowed:" + negatives.toString();
     }
-    return values;
   }
 
   function cleanInput (input) {
