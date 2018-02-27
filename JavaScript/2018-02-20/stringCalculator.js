@@ -33,6 +33,9 @@ let stringCalculator;
     let i;
     for (i = 0; i < length; i++) {
       values[i] = Number.parseInt(array[i], 10);
+      if (values[i] < 0) {
+        throw "negatives not allowed";
+      }
     }
     return values;
   }

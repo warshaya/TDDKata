@@ -101,6 +101,22 @@ test('add_differentCustomDelimiter_returnsSum', () => {
   expect(result).toBe(10);
 });
 
+test('add_inputNegativeNumber_throwsException', () => {
+  expect(() => {
+    stringCalculator().add("-1");
+  }).toThrow();
+});
+
+test('add_thownExpection_givesCorrectMsg', () => {
+debugger;
+  let msg;
+  try {
+    stringCalculator().add("-1");
+  } catch (e) {
+    msg = e;
+  }
+  expect(msg).toMatch("negatives not allowed");
+});
 
 
 
