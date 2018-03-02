@@ -42,3 +42,11 @@ test('add_unknownNumberOfNumbers_returnsTheSum', () => {
 test('add_newlineSeparator_returnsSum', () => {
   expect(new stringCalculator().add("1\n2")).toBe(3);
 });
+
+test('add_mixCommasAndNewlines_returnsSum', () => {
+  expect(new stringCalculator().add("1,2\n3,4\n5")).toBe(15);
+});
+
+test('add_customDelimiter_returnsSum', () => {
+  expect(new stringCalculator().add("//;\n1;2")).toBe(3);
+});
