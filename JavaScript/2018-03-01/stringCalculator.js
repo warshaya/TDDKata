@@ -8,7 +8,8 @@ let stringCalculator;
       if (input == '' || input == undefined) {
         return 0;
       } else {
-        let inputArray = input.split(',');
+        let cleanedInput = cleanInput(input);
+        let inputArray = cleanedInput.split(',');
         let values = [];
         let i;
         let stop = inputArray.length;
@@ -23,6 +24,11 @@ let stringCalculator;
 
   stringCalculator = function () {
     return Object.create(proto);
+  }
+
+  function cleanInput (input) {
+    let cleanedInput = input.replace(/\n/g, ',');
+    return cleanedInput;
   }
 
 })();

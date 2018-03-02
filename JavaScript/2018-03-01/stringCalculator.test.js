@@ -23,3 +23,22 @@ test('add_differentNumber_returnsThatNumber', () => {
 test('add_twoNumbersSepByComma_returnsTheSum', () => {
   expect(new stringCalculator().add('1,2')).toBe(3);
 });
+
+test('add_unknownNumberOfNumbers_returnsTheSum', () => {
+  let testArray = [];
+  let total = 0;
+  let i;
+  let stop1 = Math.floor((Math.random()*1000));
+  for (i = 0; i < stop1; i++) {
+    testArray.push(Math.floor(Math.random()*10000));
+  }
+  for (i = 0; i < stop1; i++) {
+    total += testArray[i];
+  }
+  let result = new stringCalculator().add(testArray.toString());
+  expect(result).toBe(total);
+});
+
+test('add_newlineSeparator_returnsSum', () => {
+  expect(new stringCalculator().add("1\n2")).toBe(3);
+});
