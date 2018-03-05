@@ -17,6 +17,7 @@ let stringCalculator;
         for (i = 0; i < stop; i++) {
           values.push(Number.parseInt(inputArray[i], 10));
         }
+        checkForNegative(values);
         return values.reduce((t, v) => t += v, 0);
       }
     }
@@ -49,6 +50,15 @@ let stringCalculator;
   */
   function escapeRegExp(string) {
     return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'); // $& means the whole matched string
+  }
+
+  function checkForNegative(valuesArray) {
+    let i;
+    for (i = 0; i < valuesArray.length; i++) {
+      if (valuesArray[i] < 0) {
+        throw 'number cannot be negative';
+      }
+    }
   }
 
 })();

@@ -54,3 +54,9 @@ test('add_customDelimiter_returnsSum', () => {
 test('add_unescapedRegEx_returnsSum', () => {
   expect(new stringCalculator().add('//1ok)*\n11ok)*2')).toBe(3);
 });
+
+test('add_withNegativeNumber_Throws', () => {
+  expect(() => {
+    new stringCalculator().add("-1");
+  }).toThrow();
+});
