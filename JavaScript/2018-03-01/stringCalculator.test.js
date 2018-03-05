@@ -50,3 +50,7 @@ test('add_mixCommasAndNewlines_returnsSum', () => {
 test('add_customDelimiter_returnsSum', () => {
   expect(new stringCalculator().add("//;\n1;2")).toBe(3);
 });
+
+test('add_unescapedRegEx_returnsSum', () => {
+  expect(new stringCalculator().add('//1ok)*\n11ok)*2')).toBe(3);
+});
