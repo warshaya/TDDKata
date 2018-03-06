@@ -60,3 +60,13 @@ test('add_withNegativeNumber_Throws', () => {
     new stringCalculator().add("-1");
   }).toThrow();
 });
+
+test('add_NegativeNumber_msgListsNumber', () => {
+  let msg;
+  try {
+    new stringCalculator().add("-1,-2");
+  } catch (e) {
+    msg = e;
+  }
+  expect(msg).toMatch("-1,-2");
+});

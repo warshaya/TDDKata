@@ -53,11 +53,15 @@ let stringCalculator;
   }
 
   function checkForNegative(valuesArray) {
+    let negatives = [];
     let i;
     for (i = 0; i < valuesArray.length; i++) {
       if (valuesArray[i] < 0) {
-        throw 'number cannot be negative';
+        negatives.push(valuesArray[i]);
       }
+    }
+    if (negatives.length > 0) {
+      throw 'number cannot be negative: ' + negatives.toString();
     }
   }
 
