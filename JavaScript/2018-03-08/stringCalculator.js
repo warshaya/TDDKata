@@ -8,7 +8,14 @@ let stringCalculator;
       if (input == '') {
         return 0;
       } else {
-        return Number.parseInt(input, 10);
+        let inputArray = input.split(',');
+        let valuesArray = [];
+        let i;
+        let stop = inputArray.length;
+        for (i = 0; i < stop; i++) {
+          valuesArray[i] = Number.parseInt(inputArray[i], 10);
+        }
+        return valuesArray.reduce((t, v) => t += v, 0);
       }
     }
  

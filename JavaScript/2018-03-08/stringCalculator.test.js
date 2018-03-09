@@ -11,3 +11,8 @@ test('add_emptyString_returnsZero', () => {
 test('add_singleNumber_returnsTheNumber', () => {
   expect(new stringCalculator().add('1')).toBe(1);
 });
+
+test('add_twoNums_returnsTheSum', () => {
+  expect(new stringCalculator().add('2,1')).toBe(3);
+});
+
