@@ -1,4 +1,4 @@
-let stringCalculator;
+let stringCalculatorFactory;
 
 (function () {
 
@@ -21,14 +21,14 @@ let stringCalculator;
  
   }
 
-  stringCalculator = function () {
+  stringCalculatorFactory = function () {
     return Object.create(proto);
   }
 
   let convertNewlinesToCommas = (inputString) => {
-    return inputString.replace(/\n/i, ',');
+    return inputString.replace(/\n/g, ',');
   };
 
 })();
 
-module.exports = stringCalculator;
+module.exports = stringCalculatorFactory;
