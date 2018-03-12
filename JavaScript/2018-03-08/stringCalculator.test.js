@@ -20,3 +20,7 @@ test('add_multipleNumbs_returnsTheSum', () => {
   expect(new stringCalculator().add('3,4,5,6,7,8,10')).toBe(43);
 });
 
+test('add_newlineSeparator_alsoReturnsTheSum', () => {
+  expect(stringCalculator().add('1\n2')).toBe(3);
+});
+
