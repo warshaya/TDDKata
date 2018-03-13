@@ -25,9 +25,9 @@ let stringCalculatorFactory;
     return Object.create(proto);
   }
 
-  let convertNewlinesToCommas = (inputString) => {
+  function convertNewlinesToCommas (inputString) {
     return inputString.replace(/\n/g, ',');
-  };
+  }
 
 })();
 
