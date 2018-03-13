@@ -28,3 +28,10 @@ test('add_mixed_separators_returnsTheSUm', () => {
   expect(stringCalculatorFactory().add('1,2\n3\n4')).toBe(10);
 });
 
+test('add_stringWithCustomDelimiter_returnsTheSum', () => {
+  expect(stringCalculatorFactory().add('//;\n1;2')).toBe(3);
+});
+
+test('add_CustomDelimiterContainsRegExpWildCards_ReturnsTheSum', () => {
+  expect(stringCalculatorFactory().add('//;)*\n1;)*2')).toBe(3);
+});
