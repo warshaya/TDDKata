@@ -48,10 +48,14 @@ let stringCalculatorFactory;
   }
 
   function checkForNegativesAndThrow (inputArray) {
+    let negativesArray = [];
     for (let number of inputArray) {
        if (number < 0) {
-         throw 'no negative numbers';
+         negativesArray.push(number);
        } 
+    }
+    if (negativesArray.length > 0) {
+      throw 'no negative numbers: ' + negativesArray.toString();
     }
   }
 

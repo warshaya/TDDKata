@@ -41,3 +41,13 @@ test('add_negativeNum_throwsException', () => {
     stringCalculatorFactory().add('-1');
   }).toThrow('no negative numbers');
 });
+
+test('add_negativeNumException_listsTheValues', () => {
+  let msg = '';
+  try {
+    stringCalculatorFactory().add('-1,-2');
+  } catch (e) {
+    msg = e;
+  }
+  expect(msg).toMatch('-1,-2');
+});
