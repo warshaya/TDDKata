@@ -18,6 +18,7 @@ let stringCalculatorFactory;
         for (i = 0; i < stop; i++) {
           valuesArray[i] = Number.parseInt(inputArray[i], 10);
         }
+        checkForNegativesAndThrow(valuesArray);
         return valuesArray.reduce((t, v) => t += v, 0);
       }
     }
@@ -44,6 +45,14 @@ let stringCalculatorFactory;
   // from developer.mozilla.org
   function escapeRegExp(string) {
     return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'); // $& means the whole matched string
+  }
+
+  function checkForNegativesAndThrow (inputArray) {
+    for (let number of inputArray) {
+       if (number < 0) {
+         throw 'no negative numbers';
+       } 
+    }
   }
 
 })();

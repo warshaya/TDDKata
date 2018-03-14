@@ -35,3 +35,9 @@ test('add_stringWithCustomDelimiter_returnsTheSum', () => {
 test('add_CustomDelimiterContainsRegExpWildCards_ReturnsTheSum', () => {
   expect(stringCalculatorFactory().add('//;)*\n1;)*2')).toBe(3);
 });
+
+test('add_negativeNum_throwsException', () => {
+  expect( () => {
+    stringCalculatorFactory().add('-1');
+  }).toThrow('no negative numbers');
+});
