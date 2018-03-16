@@ -4,7 +4,19 @@ let stringCalculator;
 (function () {
 
   let proto = {
-    add: function () { return 0; }
+    add: function (input) {
+      if (!input) {
+        return 0;
+      } else {
+        input = input.replace(/\n/g, ',');
+        let inputArray = input.split(',');
+        let valuesArray = [];
+        for (let entry of inputArray) {
+          valuesArray.push(Number.parseInt(entry, 10));
+        }
+        return valuesArray.reduce((t, v) => t += v, 0);
+      }
+    }
   };
 
   stringCalculator = function () {
