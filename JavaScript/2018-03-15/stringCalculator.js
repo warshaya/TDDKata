@@ -4,6 +4,7 @@ let stringCalculator;
 (function () {
 
   let proto = {
+
     add: function (input) {
       if (!input) {
         return 0;
@@ -17,6 +18,7 @@ let stringCalculator;
         return valuesArray.reduce((t, v) => t += v, 0);
       }
     }
+
   };
 
   stringCalculator = function () {
