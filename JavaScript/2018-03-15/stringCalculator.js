@@ -8,7 +8,7 @@ let stringCalculator;
       if (!input) {
         return 0;
       } else {
-        input = input.replace(/\n/g, ',');
+        input = convertNewlinesToCommas(input);
         let inputArray = input.split(',');
         let valuesArray = [];
         for (let entry of inputArray) {
@@ -22,6 +22,11 @@ let stringCalculator;
   stringCalculator = function () {
     return Object.create(proto);
   }
+
+  function convertNewlinesToCommas (input) {
+    let cleanedInput = input.replace(/\n/g, ',');
+    return cleanedInput;
+  } 
 
 })();
 
