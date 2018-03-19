@@ -26,8 +26,11 @@ test('add_manyNumbers_returnsTheSum', () => {
   expect(stringCalculator().add('1,2,3,4,5,6,7')).toBe(28);
 });
 
-
 test('add_newlineSeparator_returnsTheSum', () => {
   expect(stringCalculator().add('1\n1')).toBe(2);
+});
+
+test('add_detectCustomDelimieter_returnSum', () => {
+  expect(stringCalculator().add('//;\n1;2')).toBe(3);
 });
 

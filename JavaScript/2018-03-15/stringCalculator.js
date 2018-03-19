@@ -9,6 +9,9 @@ let stringCalculator;
       if (!input) {
         return 0;
       } else {
+        if (input.indexOf('//') == 0) {
+          input = convertCustomDelimiter(input);
+        }
         input = convertNewlinesToCommas(input);
         let inputArray = input.split(',');
         let valuesArray = [];
@@ -28,7 +31,17 @@ let stringCalculator;
   function convertNewlinesToCommas (input) {
     let cleanedInput = input.replace(/\n/g, ',');
     return cleanedInput;
-  } 
+  }
+
+  function convertCustomDelimiter (input) {
+    let chopOffSlashes = input.substring(2);
+    let endOfDelimiter = chopOffSlashes.indexOf('\n');
+    let customDelimiter = chopOffSlashes.substring(0, endOfDelimiter);
+    let restOfString = chopOffSlashes.substring(endOfDelimiter + 1);
+    let delimiterRegExp = new RegExp(customDelimiter, 'g');
+    input = restOfString.replace(delimiterRegExp, ',');
+    return input;
+  }
 
 })();
 
