@@ -34,3 +34,7 @@ test('add_detectCustomDelimieter_returnSum', () => {
   expect(stringCalculator().add('//;\n1;2')).toBe(3);
 });
 
+test('add_customDelimiterHasRegexpWildcards_stillWorks', () => {
+  expect(stringCalculator().add('//)*\n1)*2')).toBe(3);
+});
+

@@ -38,9 +38,14 @@ let stringCalculator;
     let endOfDelimiter = chopOffSlashes.indexOf('\n');
     let customDelimiter = chopOffSlashes.substring(0, endOfDelimiter);
     let restOfString = chopOffSlashes.substring(endOfDelimiter + 1);
-    let delimiterRegExp = new RegExp(customDelimiter, 'g');
+    let delimiterRegExp = new RegExp(escapeRegExp(customDelimiter), 'g');
     input = restOfString.replace(delimiterRegExp, ',');
     return input;
+  }
+
+  // from developer.mozilla.com
+  function escapeRegExp(string) {
+    return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'); // $& means the whole matched string
   }
 
 })();
