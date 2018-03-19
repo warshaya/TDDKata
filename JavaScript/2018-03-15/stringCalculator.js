@@ -18,6 +18,7 @@ let stringCalculator;
         for (let entry of inputArray) {
           valuesArray.push(Number.parseInt(entry, 10));
         }
+        detectNegativesAndThrow(valuesArray);
         return valuesArray.reduce((t, v) => t += v, 0);
       }
     }
@@ -46,6 +47,18 @@ let stringCalculator;
   // from developer.mozilla.com
   function escapeRegExp(string) {
     return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'); // $& means the whole matched string
+  }
+
+  function detectNegativesAndThrow (anArray) {
+    let negatives = [];
+    for (let entry of anArray) {
+      if (entry < 0) {
+        negatives.push(entry);
+      }
+    }
+    if (negatives.length > 0) {
+      throw 'number cannot be negative' + negatives.toString();
+    }
   }
 
 })();

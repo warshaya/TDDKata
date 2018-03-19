@@ -38,3 +38,10 @@ test('add_customDelimiterHasRegexpWildcards_stillWorks', () => {
   expect(stringCalculator().add('//)*\n1)*2')).toBe(3);
 });
 
+test('add_useANegativeNumber_throwsAnException', () => {
+  expect( () => {
+    stringCalculator().add('-1');
+  }).toThrow();
+});
+
+
