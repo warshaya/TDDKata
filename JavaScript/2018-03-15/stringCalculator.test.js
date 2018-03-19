@@ -44,4 +44,14 @@ test('add_useANegativeNumber_throwsAnException', () => {
   }).toThrow();
 });
 
+test('add_negativeException_listsTheNumbers', () => {
+  let msg = '';
+  try {
+    stringCalculator().add('-1,-2,-3');
+  } catch (e) {
+    msg = e;
+  }
+  expect(msg).toMatch('-1,-2,-3');
+});
+
 
