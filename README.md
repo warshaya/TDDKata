@@ -21,4 +21,6 @@ debug tests:
  then, run:
 `./node_modules/.bin/node-inspect ./node_modules/jest/bin/jest.js ./stringCalculator.test.js`
 
+or, sometimes that doesn't work, and I run:
+`node debug ./node_modules/jest/bin/jest.js stringCalculator.test.js`
 
