@@ -19,6 +19,7 @@ let stringCalculator;
           valuesArray.push(Number.parseInt(entry, 10));
         }
         detectNegativesAndThrow(valuesArray);
+        zeroOutNumbersGT1000(valuesArray);
         return valuesArray.reduce((t, v) => t += v, 0);
       }
     }
@@ -58,6 +59,14 @@ let stringCalculator;
     }
     if (negatives.length > 0) {
       throw 'number cannot be negative' + negatives.toString();
+    }
+  }
+
+  function zeroOutNumbersGT1000 (inputArray) {
+    for (let i = 0; i < inputArray.length; i++) {
+      if (inputArray[i] > 1000) {
+        inputArray[i] = 0;
+      }
     }
   }
 

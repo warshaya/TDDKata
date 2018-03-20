@@ -54,4 +54,7 @@ test('add_negativeException_listsTheNumbers', () => {
   expect(msg).toMatch('-1,-2,-3');
 });
 
+test('add_GreaterThan1000_convertsToZero', () => {
+  expect(stringCalculator().add('1001,2')).toBe(2);
+});
 
