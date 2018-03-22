@@ -31,6 +31,7 @@ test('add_newlineSeparator_returnsTheSum', () => {
 });
 
 test('add_detectCustomDelimieter_returnSum', () => {
+  debugger;
   expect(stringCalculator().add('//;\n1;2')).toBe(3);
 });
 
@@ -58,3 +59,6 @@ test('add_GreaterThan1000_convertsToZero', () => {
   expect(stringCalculator().add('1001,2')).toBe(2);
 });
 
+test('add_longDelimieterInBrackets_returnsTheSum', () => {
+  expect(stringCalculator().add('//[***]\n1***2***3')).toBe(6);
+});
