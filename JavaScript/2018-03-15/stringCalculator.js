@@ -40,14 +40,23 @@ let stringCalculator;
     let endOfDelimiter = chopOffSlashes.indexOf('\n');
     let customDelimiter = chopOffSlashes.substring(0, endOfDelimiter);
     let restOfString = chopOffSlashes.substring(endOfDelimiter + 1);
+    customDelimiter = detectAndRemoveOuterBrackets(customDelimiter);
     let delimiterRegExp = new RegExp(escapeRegExp(customDelimiter), 'g');
     input = restOfString.replace(delimiterRegExp, ',');
     return input;
   }
 
+  function detectAndRemoveOuterBrackets (input) {
+    if (input.startsWith('[') && input.endsWith(']')) {
+      return input.slice(1, input.length - 1);
+    } else {
+      return input;
+    }
+  }
+
   // from developer.mozilla.com
-  function escapeRegExp(string) {
-    return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'); // $& means the whole matched string
+  function escapeRegExp(inputString) {
+    return inputString.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'); // $& means the whole matched string
   }
 
   function detectNegativesAndThrow (anArray) {
