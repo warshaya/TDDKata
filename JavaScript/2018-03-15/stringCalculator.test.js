@@ -63,7 +63,11 @@ test('add_longDelimieterInBrackets_returnsTheSum', () => {
   expect(stringCalculator().add('//[***]\n1***2***3')).toBe(6);
 });
 
-test('add_multipleLongDelimitersInBrackets_returnsTheSum', () => {
+test('add_multipleDelimitersInBrackets_returnsTheSum', () => {
   expect(stringCalculator().add('//[*][%]\n1*2%3')).toBe(6);
+});
+
+test('add_multipleLongDelimitersInBrackets_returnsTheSum', () => {
+  expect(stringCalculator().add('//[!@#$%][^&*()]\n1!@#$%2^&*()3')).toBe(6);
 });
 
