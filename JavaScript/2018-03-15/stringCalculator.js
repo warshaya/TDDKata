@@ -41,9 +41,12 @@ let stringCalculator;
     let customDelimiter = chopOffSlashes.substring(0, endOfDelimiter);
     let restOfString = chopOffSlashes.substring(endOfDelimiter + 1);
     customDelimiter = detectAndRemoveOuterBrackets(customDelimiter);
-    let delimiterRegExp = new RegExp(escapeRegExp(customDelimiter), 'g');
-    input = restOfString.replace(delimiterRegExp, ',');
-    return input;
+    let customDelimiterArray = customDelimiter.split('][');
+    for (let entry of customDelimiterArray) {
+      let delimiterRegExp = new RegExp(escapeRegExp(entry), 'g');
+      restOfString = restOfString.replace(delimiterRegExp, ',');
+    }
+    return restOfString;
   }
 
   function detectAndRemoveOuterBrackets (input) {
