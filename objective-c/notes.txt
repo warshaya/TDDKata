@@ -1,0 +1,8 @@
+
+https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/ProgrammingWithObjectiveC/DefiningClasses/DefiningClasses.html
+
+https://developer.apple.com/documentation/foundation/nsnumber/1418317-floatvalue?language=objc
+
+https://developer.apple.com/documentation/xctest/xctasserttrue?language=objc
+
+
